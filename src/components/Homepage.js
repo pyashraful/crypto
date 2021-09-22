@@ -12,6 +12,7 @@ const Homepage = () => {
 
   if (isFetching) return "Loading...";
   const globalState = data?.data?.stats;
+  console.log(data);
   console.log(globalState);
   return (
     <>
@@ -55,7 +56,7 @@ const Homepage = () => {
           <Link to="/cryptocurrencies"> see more</Link>
         </Title>
       </div>
-      <Cryptocurrencies simplified />
+      {!isFetching && <Cryptocurrencies simplified />}
       <div className="home-heading-container">
         <Title level={2} className="home-title">
           Latest crypto News
